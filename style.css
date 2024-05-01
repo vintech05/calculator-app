@@ -70,10 +70,9 @@
   
   --_key-background: hsl(281, 89%, 26%);
   --key-shadow: hsl(285, 91%, 52%);
-  --equal-key-background: hsl(176, 100%, 44%);
+  --equal-key-background: hsla(176, 100%, 44%, 0.805);
   --equal-key-shadow: hsl(177, 92%, 70%);
   --key-background: hsl(268, 47%, 21%);
-  --key-shadow: hsl(290, 70%, 36%);
 
   /* texts */
 
