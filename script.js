@@ -4,6 +4,7 @@ const modalOverlay = document.querySelector(".modal-overlay");
 const themeBtn = document.querySelector(".switch");
 const radioTiles = document.querySelectorAll(".radio-tile");
 const radioInput = document.querySelectorAll(".radio-input");
+const radioInputs = document.querySelectorAll('input[name="engine"]');
 
 function openModal() {
   modalBox.style.display = "block";
@@ -36,12 +37,24 @@ radioTiles.forEach((radioTile) => {
     if (radioTile.classList.contains("toggle-theme-1")) {
       document.body.classList.remove("theme-2", "theme-3");
       document.body.classList.add("theme-1");
+
+      localStorage.setItem("options", document.body.innerHTML);
+      localStorage.setItem("theme", document.body.className);
+      console.log(localStorage.getItem("theme"));
     } else if (radioTile.classList.contains("toggle-theme-2")) {
       document.body.classList.remove("theme-1", "theme-3");
       document.body.classList.add("theme-2");
+
+      localStorage.setItem("options", document.body.innerHTML);
+      localStorage.setItem("theme", document.body.className);
+      console.log(localStorage.getItem("theme"));
     } else if (radioTile.classList.contains("toggle-theme-3")) {
       document.body.classList.remove("theme-1", "theme-2");
       document.body.classList.add("theme-3");
+
+      localStorage.setItem("options", document.body.innerHTML);
+      localStorage.setItem("theme", document.body.className);
+      console.log(localStorage.getItem("theme"));
     }
   });
 });
@@ -58,9 +71,15 @@ function appendNumber(input) {
   if (displayScreen.value.length > 15) {
     displayScreen.style.fontSize = "1.5rem";
     displayScreen.value += input;
+    localStorage.setItem("displayScreen", displayScreen.value);
+    localStorage.setItem("displayScreenSize", displayScreen.style.fontSize);
+    console.log(localStorage.getItem("displayScreenSize"));
   } else {
     displayScreen.value += input;
     displayScreen.style.fontSize = "2.5rem";
+    localStorage.setItem("displayScreen", displayScreen.value);
+    localStorage.setItem("displayScreenSize", displayScreen.style.fontSize);
+    console.log(localStorage.getItem("displayScreenSize"));
   }
 }
 
@@ -72,4 +91,10 @@ function showResult() {
   }
 }
 
+function onLoad() {
+  document.body.className = localStorage.getItem("theme");
+  displayScreen.value = localStorage.getItem("displayScreen");
+  displayScreen.style.fontSize = localStorage.getItem("displayScreenSize");
+}
+window.addEventListener("load", onLoad);
 themeBtn.addEventListener("click", openModal);
