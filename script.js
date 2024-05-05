@@ -38,21 +38,18 @@ radioTiles.forEach((radioTile) => {
       document.body.classList.remove("theme-2", "theme-3");
       document.body.classList.add("theme-1");
 
-      localStorage.setItem("options", document.body.innerHTML);
       localStorage.setItem("theme", document.body.className);
       console.log(localStorage.getItem("theme"));
     } else if (radioTile.classList.contains("toggle-theme-2")) {
       document.body.classList.remove("theme-1", "theme-3");
       document.body.classList.add("theme-2");
 
-      localStorage.setItem("options", document.body.innerHTML);
       localStorage.setItem("theme", document.body.className);
       console.log(localStorage.getItem("theme"));
     } else if (radioTile.classList.contains("toggle-theme-3")) {
       document.body.classList.remove("theme-1", "theme-2");
       document.body.classList.add("theme-3");
 
-      localStorage.setItem("options", document.body.innerHTML);
       localStorage.setItem("theme", document.body.className);
       console.log(localStorage.getItem("theme"));
     }
