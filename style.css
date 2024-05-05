@@ -199,7 +199,7 @@ body {
   justify-content: center;
   width: 80px;
   min-height: 80px;
-  border-radius: 0.5rem;
+  border-radius: 0.7rem;
   width: 280px;
   border: 2px solid #b5bfd9;
   background-color: #fff;
@@ -223,15 +223,6 @@ body {
   opacity: 0;
   transform: scale(0);
   transition: 0.25s ease;
-}
-
-.radio-tile:hover {
-  border-color: #2260ff;
-}
-
-.radio-tile:hover:before {
-  transform: scale(1);
-  opacity: 1;
 }
 
 .radio-icon svg {
