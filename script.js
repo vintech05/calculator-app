@@ -4,7 +4,6 @@ const modalOverlay = document.querySelector(".modal-overlay");
 const themeBtn = document.querySelector(".switch");
 const radioTiles = document.querySelectorAll(".radio-tile");
 const radioInput = document.querySelectorAll(".radio-input");
-const radioInputs = document.querySelectorAll('input[name="engine"]');
 
 function openModal() {
   modalBox.style.display = "block";
@@ -93,5 +92,6 @@ function onLoad() {
   displayScreen.value = localStorage.getItem("displayScreen");
   displayScreen.style.fontSize = localStorage.getItem("displayScreenSize");
 }
+
 window.addEventListener("load", onLoad);
 themeBtn.addEventListener("click", openModal);
