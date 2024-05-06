@@ -88,9 +88,12 @@ function showResult() {
 }
 
 function onLoad() {
-  document.body.className = localStorage.getItem("theme");
-  displayScreen.value = localStorage.getItem("displayScreen");
-  displayScreen.style.fontSize = localStorage.getItem("displayScreenSize");
+  if (typeof localStorage.getItem("theme") === "undefined") {
+    document.body.className = localStorage.getItem("theme") || "theme-1";
+    displayScreen.value = localStorage.getItem("displayScreen") || "";
+    displayScreen.style.fontSize =
+      localStorage.getItem("displayScreenSize") || "2.5rem";
+  }
 }
 
 window.addEventListener("load", onLoad);
