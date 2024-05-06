@@ -88,15 +88,16 @@ function showResult() {
 }
 
 function onLoad() {
-  if (typeof localStorage.getItem("theme") === "undefined") {
-    document.body.className = localStorage.getItem("theme") || "theme-1";
+  if (!localStorage.getItem("theme")) {
+    document.body.className = "theme-1";
     displayScreen.value = localStorage.getItem("displayScreen") || "";
     displayScreen.style.fontSize =
       localStorage.getItem("displayScreenSize") || "2.5rem";
+  } else {
+    document.body.className = localStorage.getItem("theme");
+    displayScreen.value = localStorage.getItem("displayScreen");
+    displayScreen.style.fontSize = localStorage.getItem("displayScreenSize");
   }
-  document.body.className = localStorage.getItem("theme");
-  displayScreen.value = localStorage.getItem("displayScreen");
-  displayScreen.style.fontSize = localStorage.getItem("displayScreenSize");
 }
 
 window.addEventListener("load", onLoad);
