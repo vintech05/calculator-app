@@ -127,7 +127,9 @@
 
     <div class="calc-main-part">
       <div class="display-screen">
-        <input class="screen" readonly>
+        <label for="calc-screen">
+          <input name="calc-screen" class="screen" aria-label="Calculator Screen" readonly>
+        </label>
       </div>
       <div class="keys">
         <button class="key num-key" onclick="appendNumber('7')">7</button>
